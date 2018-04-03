@@ -1,0 +1,46 @@
+BlockChain Encoder
+Version 2.0
+Readme File
+26/03/2018
+
+****************************************************************************
+About This Document:
+
+This document contains last-minute information about the program including
+BlockChain Encoder
+Version 2.0
+Readme File
+26/03/2018
+****************************************************************************
+
+I.   Program Operation
+II.  General Technical Issues
+
+
+
+II.Program Operation
+
+1.The program requires the id and password and database name('Testing' if you completed the steps mentioned above) to start operating.
+	If using 'Testing' database enter 'Results' as table name.
+	Otherwise use table name of table created by you.
+
+2.After opening it requires you to select any one mode of opeation.
+	Option '1' converts the table in database into a blockchain
+		by introducing a new column "HASH" which contains
+		SHA256 hash of the row data.
+
+	Option '2' simply outputs the table data.
+
+	Option '3' opens up this Help file.
+
+	Option '4' closes the program
+
+3.The program converts the entire database to blockchain only if the hash column of first row is empty.The program assumes that if first one is empty the remaining rows too have Null value in "HASH" column.
+
+III. General Technical Issues
+
+	If the procedures are followed well,then there was no error observed.
+However on certain systems where database is read-write protected the program fails to work.
+	Since the program doesn't check for any redundancy in rows or integrity of data,this can cause issues when the database has been hashed but not organised, then deleting any one row renders the hashes useless.
+	The program uses multiple calls and for program simplicity it has been turned into modules but such a distributed program takes much time on larger databases and incase of lack of memory, program may or may not run.
+
